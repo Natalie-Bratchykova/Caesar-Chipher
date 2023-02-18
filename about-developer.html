@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="styles/about-developer-style.css" />
+    <link rel="website icon" href="images/main-back.jpg" type="jpg" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <section class="intro-section">
+      <header class="intro-block__header header">
+        <div class="name-letters">NB</div>
+        <!-- display in appropriate way! -->
+        <div class="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+          <!-- menu items -->
+          <div class="menu-items">
+            <!-- add icons to each option -->
+            <a href="#about-me" class="menu-items__about-me menu-item"
+              >About me</a
+            >
+            <a href="#skills-section" class="menu-items__skills menu-item"
+              >Skills</a
+            >
+            <a href="#education" class="menu-items__education menu-item"
+              >Education</a
+            >
+            <!-- <a href="#" class="menu-items__projects menu-item">Projects</a>
+            <a href="#" class="menu-items__contact-me menu-item">Contact me</a> -->
+          </div>
+        </div>
+      </header>
+      <!-- main part of intro -->
+      <main class="main">
+        <div class="background"></div>
+        <div class="description">
+          <h1 class="name-data">Natalie <br />Bratchykova</h1>
+          <h2 class="speciality-data">NTUU KPI second year student</h2>
+          <!-- <h2 class="speciality-data">junior frontend developer</h2> -->
+        </div>
+      </main>
+    </section>
+    <!-- second section --- about me -->
+    <section class="about-me" id="about-me">
+      <h2 class="title">about me</h2>
+      <div class="about-me__container">
+        <!-- add link on my git hub profile -->
+        <p>
+          My name is Nataliia Bratchykova. I am 18 years old, a second year
+          student of National Technical University of Uktaine, Kyiv
+          Politechnical Institule named after Igor Sikorsky. I am styding
+          Computer science.
+          <!-- I am Ukrainian frontend developer. I started interesting in web in
+          2020, but real passion to it I felt in 2022. In that year I started
+          learning it deeply. -->
+        </p>
+        <p>
+          I try to learn something new when I have time for this. If you become
+          interested in my works, do not hesitate to aware with my projects on
+          <a
+            href="https://github.com/nata-ko"
+            target="_blank"
+            class="git-hub-link"
+            >Git Hub</a
+          >. Apart from different my works, there is
+          <a href="#" target="_blank" class="git-hub-link">link</a> with my
+          university works as well.
+        </p>
+        <!-- <p>
+          Speaking of tools stack, there used html, css, sass, bootstrap and js.
+          And now I extent my knowledge in fields, such as nodejs, react and
+          tailwind.
+        </p> -->
+      </div>
+    </section>
+    <!-- third section  --- skills -->
+    <section class="skills-section" id="skills-section">
+      <h2 class="skills-title title">skills</h2>
+      <main>
+        <div class="my-datas">
+          <!-- add cards with all important info about your education -->
+          <!-- add map and set university location -->
+          <div class="card">
+            <h3 class="education-data">html</h3>
+            <!-- scope start -->
+            <div class="progress-scope">
+              <div class="progress-line"></div>
+              <div class="progress-option">
+                <span class="progress-data data1">semantic</span>
+                <div class="progress-circle circle1"></div>
+                <!-- <span class="progress-description description1"
+                  >Edera curses</span
+                > -->
+              </div>
+              <div class="progress-option">
+                <!-- <span class="progress-data data2">2022</span> -->
+                <div class="progress-circle circle2"></div>
+                <span class="progress-description description2">seo</span>
+              </div>
+            </div>
+            <!-- scope end -->
+          </div>
+          <div class="card">
+            <h3 class="education-data">css</h3>
+            <div class="progress-scope">
+              <div class="progress-line"></div>
+              <div class="progress-option">
+                <span class="progress-data data1">base css</span>
+                <div class="progress-circle circle1"></div>
+              </div>
+              <div class="progress-option">
+                <div class="progress-circle circle2"></div>
+                <span class="progress-description description2">sass</span>
+              </div>
+              <!-- 3 circle -->
+              <div class="progress-option">
+                <div class="progress-circle circle3"></div>
+                <span class="progress-description description3">Tailwind</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="education-data">js</h3>
+            <div class="progress-scope">
+              <div class="progress-line"></div>
+              <div class="progress-option">
+                <span
+                  class="progress-data data1"
+                  style="max-width: 100px; line-height: 13px; left: 13%"
+                  >DOM
+                  <span style="text-transform: lowercase">manipulation</span>
+                </span>
+                <div class="progress-circle circle1"></div>
+              </div>
+              <div class="progress-option">
+                <div class="progress-circle circle2"></div>
+                <span
+                  class="progress-description description2"
+                  style="left: 55%; line-height: 13px; max-width: 90px"
+                  >Functional
+                  <span style="text-transform: lowercase; text-align: center"
+                    >approach</span
+                  >
+                </span>
+              </div>
+              <!-- 3 circle -->
+              <div class="progress-option">
+                <div class="progress-circle circle3"></div>
+                <span
+                  class="progress-description description3"
+                  style="max-width: 100px; line-height: 13px; left: 15%"
+                  >Object oriented
+                  <span style="text-transform: lowercase">approach</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- education -->
+    <section class="education-section" id="education">
+      <h2 class="education-title">Education</h2>
+      <main class="education-container">
+        <div class="education-university education">
+          <h4 class="__title">University</h4>
+          <div class="arrow-place">
+            <span
+              class="material-symbols-outlined arrow-expand-more"
+              style="font-size: 95px"
+            >
+              expand_more
+            </span>
+          </div>
+          <div class="education_content">
+            <div class="button-group">
+              <button class="education-btn" id="education-btn1">
+                Bachelor
+              </button>
+              <div class="__info info1 _hidden">
+                <p>Years: 2021 - now</p>
+                <p>Speciality: Computer Science</p>
+                <p>University: NTUU KPI</p>
+                <p>Country: Ukraine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="education-courses education">
+          <h4 class="__title">Courses</h4>
+          <div class="arrow-place">
+            <span
+              class="material-symbols-outlined arrow-expand-more"
+              style="font-size: 95px"
+            >
+              expand_more
+            </span>
+          </div>
+          <div class="education_content">
+            <div class="button-group">
+              <button class="education-btn" id="education-btn2">Edera</button>
+              <div class="__info info2 _hidden">
+                <p>Year: 2020</p>
+                <p>Speciality: HTML, CSS, JS development</p>
+                <p>Organisation: Edera</p>
+                <p>Country: Ukraine</p>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button class="education-btn" id="education-btn3">Udemy</button>
+              <div class="__info info3 _hidden">
+                <p>Year: 2023</p>
+                <p>Speciality: Complete JS course</p>
+                <p>Organisation: Udemy</p>
+                <p>Country: Ukraine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+    <script src="scripts/about-dev.js"></script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

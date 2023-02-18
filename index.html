@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css"">
+    <title>First Lab</title>
+  </head>
+  <body>
+    <main>
+      <!-- intro section -->
+      <section class="intro-block">
+        <div class="intro-block__titles">
+          <h1 class="title">Caesar Chipher</h1>
+          <h3 class="start-btn">Let's start</h3>
+        </div>
+        <!-- decoration elements -->
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+      </section>
+      <!-- menu section -->
+      <section class="menu-block hidden">
+        <div class="section-title">Menu</div>
+        <menu class="menu">
+          <div class="menu-card">
+            <div class="menu-card__title">Encrypt</div>
+            <div class="menu-card__encrypt-menu menu-card__buttons">
+              <button class="button" id="btnGoToTestEncrypt">
+                Test encryption
+              </button>
+              <button class="button" id="btnGoToEncryptFiles">
+                Encrypt files
+              </button>
+            </div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card__title">Decrypt</div>
+            <div class="menu-card__decrypt-menu menu-card__buttons">
+              <button class="button" id="btnGoToTestDecrypt">
+                Test decryption
+              </button>
+              <button class="button" id="btnGoToDecryptFiles">
+                Decrypt files
+              </button>
+              <button class="button" id="btnGoToBruteForce">
+                Try brute force
+              </button>
+            </div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card__title">About developer</div>
+            <div class="menu-card__developer-menu menu-card__buttons">
+              <button class="button">
+                <a href="/about-developer.html" target="_blank" rel="noopener noreferrer"
+                  >Read more</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card__title">Exit</div>
+            <div class="menu-card__exit-menu menu-card__buttons">
+              <button class="button" id="exit">Good bye</button>
+            </div>
+          </div>
+        </menu>
+      </section>
+      <!-- test encryption -->
+      <section class="test-encryption-block hidden">
+        <div class="section-title">Test encryption</div>
+        <div class="test-encryption__content">
+          <!-- input -->
+          <div class="test-encryption__card text-encryption__textArea">
+            <div class="test-encrypt__card-title">Input:</div>
+            <input
+              type="text"
+              class="input-text"
+              id="input-encrypt"
+              placeholder="Input your text here"
+            />
+          </div>
+          <!-- click for encrypt -->
+          <div class="test-encryption__card test-encryption__buttons">
+            <div class="input-key">
+              <label for="input-key" class="key-label">Key</label>
+              <input
+                type="number"
+                id="input-key-encrypt"
+                min="0"
+                placeholder="0"
+              />
+            </div>
+            <button class="button" id="btnTestEncrypt">Encrypt</button>
+            <button class="button" id="back-to-menu">Back to menu</button>
+          </div>
+          <!-- encrypted text -->
+          <div class="test-encryption__card test-encryption__text">
+            <div class="test-encrypt__card-title">Output:</div>
+            <textarea class="test-encryption__text-result" id="encryption-result" placeholder="Encrypted text will appear here">
+              
+            </textarea>
+          </div>
+        </div>
+      </section>
+      <!-- test decryption -->
+      <section class="test-decryption-block hidden">
+        <div class="section-title">Test decryption</div>
+        <div class="test-encryption__content">
+          <!-- input -->
+          <div class="test-encryption__card text-encryption__textArea">
+            <div class="test-encrypt__card-title">Input:</div>
+            <input
+              type="text"
+              class="input-text"
+              id="input-decrypt"
+              placeholder="Input your text here"
+              spellcheck="true"
+            />
+          </div>
+          <!-- click for encrypt -->
+          <div class="test-encryption__card test-encryption__buttons">
+            <div class="input-key">
+              <label for="input-key" class="key-label">Key</label>
+              <input
+                type="number"
+                id="input-key-decrypt"
+                min="0"
+                placeholder="0"
+              />
+            </div>
+            <button class="button" id="btnTestDecrypt">Decrypt</button>
+            <button class="button" id="back-to-menu1">Back to menu</button>
+          </div>
+          <!-- encrypted text -->
+          <div class="test-encryption__card test-encryption__text">
+            <div class="test-encrypt__card-title">Output:</div>
+            <textarea class="test-encryption__text-result" id="decryption-result" placeholder="Result will appear here" >
+              
+            </textarea>
+          </div>
+        </div>
+      </section>
+      <!-- encrypt files -->
+      <section class="encrypt-files files hidden">
+        <div class="section-title">Encrypt files</div>
+        <div class="files-content">
+          <!-- create and save file -->
+          <div class="files-card">
+            <div class="card-title">Create file</div>
+            <div class="card-description">
+              <div class="card-text">
+                You can create and fill file with your text. Than you will
+                encrypt and save. So, you will have 2 files: with original text
+                and encrypted
+              </div>
+              <div class="card-buttons">
+                <button
+                  class="button"
+                  id="btnCreateAndSaveFile"
+                  style="width: 100%"
+                >
+                  Create and save
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- open file -->
+          <div class="files-card">
+            <div class="card-title">Open file</div>
+            <div class="card-description open-file-description">
+              <div class="card-text">You can open file for edit its text.</div>
+              <div class="card-buttons">
+                <div
+                  class="input-file-group"
+                  style="display: flex; width: 100%"
+                >
+                  <label for="open-file" style="width: 110%"
+                    >Open and edit</label
+                  >
+                  <input
+                    type="file"
+                    id="open-file"
+                    class="button open-file-btn"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- print -->
+          <div class="files-card">
+            <div class="card-title">Print file</div>
+            <div class="card-description open-file-description">
+              <div class="card-text">
+                You can open file and print original or encrypted text.
+              </div>
+              <div class="input-file-group" style="display: flex; width: 100%">
+                <label for="print-file" style="width: 110%"
+                  >Open and print</label
+                >
+                <input
+                  type="file"
+                  id="print-file"
+                  class="button open-file-btn"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- popup for creating file  -->
+        <div class="create-file-pop-up hidden">
+          <div class="card-title">Create file</div>
+          <div class="file-name-group">
+            <label for="file-name">Input file name:</label>
+            <input
+              type="text"
+              name="file-name"
+              id="file-name"
+              placeholder="untitled"
+            />
+          </div>
+          <div class="file-type-group">
+            <div>Choose file type:</div>
+            <div class="choose-options">
+              <div class="radio-group">
+                <input type="radio" name="file-type" id="txt" / checked>
+                <label for="txt">text file(.txt)</label>
+              </div>
+              <div class="radio-group">
+                <input type="radio" name="file-type" id="doc" />
+                <label for="doc">text file(.doc)</label>
+              </div>
+            </div>
+          </div>
+          <div class="file-text-group">
+            <textarea
+              name="file-text-inner"
+              id="file-text-inner"
+              cols="30"
+              rows="10"
+              placeholder="input your text"
+            ></textarea>
+          </div>
+          <div class="create-file-btn-group">
+            <button class="button" id="create-file-button">Create</button>
+            <button class="button" id="create-file-cancel">Cancel</button>
+          </div>
+        </div>
+        <!-- popup print file -->
+        <div class="create-file-pop-up show-printed-file hidden">
+          <div class="card-title print-file-title">File name</div>
+          <textarea name="" id="" cols="30" rows="10" class="file-inner" placeholder="file's text" ></textarea>
+          <div class="create-file-btn-group">
+            <button class="button" id="bntClosePrintFile" style="width: 100%">
+              Close
+            </button>
+          </div>
+        </div>
+        <!-- popup save as file -->
+        <div class="create-file-pop-up edit-file-popup hidden">
+          <div class="edit-file-header" id="btnCloseEditFilePopup">X</div>
+          <div class="card-title edit-file-name">file name</div>
+          <!-- file inner -->
+          <div class="edit-file-content">
+            <textarea
+              name="edit-file-text"
+              id="edit-file-text"
+              cols="30"
+              rows="10"
+              placeholder="text"
+            ></textarea>
+          </div>
+          <div class="create-file-btn-group">
+            <button class="button" id="btnEditFileSave">Save</button>
+            <button class="button" id="btnEditFileEncrypt">Encrypt</button>
+            <!-- in this case copy "open file and insert data" -->
+          </div>
+        </div>
+        <div class="create-file-pop-up encrypt-edited-file key-setting hidden">
+          <div class="edit-file-header" id="btnCloseEditFileKeySetting">X</div>
+          <div class="card-title edit-file-name">Setting</div>
+          <!-- file inner -->
+          <div class="edit-file-set-key">
+            <label for="edit-file-encrypt-key">Key</label>
+            <input
+              type="number"
+              name="edit-file-encrypt-key"
+              id="edit-file-encrypt-key"
+            />
+          </div>
+          <div class="create-file-btn-group">
+            <button
+              class="button"
+              id="btnEditFileDoEncrypt"
+              style="width: 100%"
+            >
+              Encrypt
+            </button>
+          </div>
+        </div>
+        <div class="back-to-menu-container">
+          <button class="button back-to-menu-btn" id="back-to-menu2">
+            Back to menu
+          </button>
+        </div>
+      </section>
+      <!-- decrypt files -->
+      <section class="decrypt-files files hidden">
+        <div class="section-title">Decrypt files</div>
+        <div class="files-content">
+          <!-- create and save file -->
+          <div class="files-card">
+            <div class="card-title">Create file</div>
+            <div class="card-description">
+              <div class="card-text">
+                You can create and fill file with your text. Than you will
+                encrypt and save. So, you will have 2 files: with original text
+                and encrypted
+              </div>
+              <div class="card-buttons">
+                <button
+                  class="button"
+                  id="btnCreateAndSaveFileDecrypt"
+                  style="width: 100%"
+                >
+                  Create and save
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- open file -->
+          <div class="files-card">
+            <div class="card-title">Open file</div>
+            <div class="card-description open-file-description">
+              <div class="card-text">You can open file for edit its text.</div>
+              <div class="card-buttons">
+                <div
+                  class="input-file-group"
+                  style="display: flex; width: 100%"
+                >
+                  <label for="open-decrypt" style="width: 110%"
+                    >Open and edit</label
+                  >
+                  <input
+                    type="file"
+                    id="open-decrypt"
+                    class="button open-file-btn"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- print -->
+          <div class="files-card">
+            <div class="card-title">Print file</div>
+            <div class="card-description open-file-description">
+              <div class="card-text">
+                You can open file and print original or encrypted text.
+              </div>
+              <div class="input-file-group" style="display: flex; width: 100%">
+                <label for="print-file-decrypt" style="width: 110%"
+                  >Open and print</label
+                >
+                <input
+                  type="file"
+                  id="print-file-decrypt"
+                  class="button open-file-btn"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      <!-- popup for creating file  -->
+      <div class="create-file-pop-up create-file-decrypt hidden">
+        <div class="card-title">Create file</div>
+        <div class="file-name-group">
+          <label for="file-name-decrypt">Input file name:</label>
+          <input
+            type="text"
+            name="file-name"
+            id="file-name-decrypt"
+            placeholder="untitled"
+          />
+        </div>
+        <div class="file-type-group">
+          <div>Choose file type:</div>
+          <div class="choose-options">
+            <div class="radio-group">
+              <input type="radio" name="file-type-decrypt" id="txt" / checked>
+              <label for="txt">text file(.txt)</label>
+            </div>
+            <div class="radio-group">
+              <input type="radio" name="file-type-decrypt" id="doc" />
+              <label for="doc">text file(.doc)</label>
+            </div>
+          </div>
+        </div>
+        <div class="file-text-group">
+          <textarea
+            name="file-text-inner"
+            id="file-text-inner-decrypt"
+            cols="30"
+            rows="10"
+            placeholder="input your text"
+          ></textarea>
+        </div>
+        <div class="create-file-btn-group">
+          <button class="button" id="create-file-button-decryption">Create</button>
+          <button class="button" id="create-file-cancel-decryption">Cancel</button>
+        </div>
+      </div>
+
+      <!-- popup save as file -->
+      <div class="create-file-pop-up edit-file-popup-decrypt edit-file-popup hidden" id="edit-file-popup-decrypt">
+        <div class="edit-file-header" id="btnCloseEditFilePopupDecrypt">X</div>
+        <div class="card-title edit-file-name-decrypt">file name</div>
+        <!-- file inner -->
+        <div class="edit-file-content">
+          <textarea
+            name="edit-file-text"
+            id="edit-file-text-decrypt"
+            cols="30"
+            rows="10"
+            placeholder="text"
+          ></textarea>
+        </div>
+        <div class="create-file-btn-group">
+          <button class="button" id="btnEditFileSaveDecrypt">Save</button>
+          <button class="button" id="btnEditFileDecrypt">Decrypt</button>
+        </div>
+      </div>
+      <div class="create-file-pop-up decrypt-edited-file key-setting hidden">
+        <div class="edit-file-header" id="btnCloseEditFileKeySettingDecrypt">X</div>
+        <div class="card-title edit-file-name">Setting</div>
+        <!-- file inner -->
+        <div class="edit-file-set-key">
+          <label for="edit-file-decrypt-key">Key</label>
+          <input
+            type="number"
+            name="edit-file-encrypt-key"
+            id="edit-file-decrypt-key"
+          />
+        </div>
+        <div class="create-file-btn-group">
+          <button
+            class="button"
+            id="btnEditFileDoDecrypt"
+            style="width: 100%"
+          >
+            Decrypt
+          </button>
+        </div>
+      </div>
+        <!-- popup print file -->
+        <div class="create-file-pop-up show-printed-file print-decrypted-file hidden">
+          <div class="card-title print-file-title" id="print-file-title">File name</div>
+          <textarea name="" id="" cols="30" rows="10" class="file-inner file-inner-decrypt" id="file-inner" placeholder="file's text"></textarea>
+          <div class="create-file-btn-group">
+            <button class="button" id="bntClosePrintFile1" style="width: 100%">
+              Close
+            </button>
+          </div>
+        </div>
+        <div class="back-to-menu-container">
+          <button class="button back-to-menu-btn" id="back-to-menu-decryption">
+            Back to menu
+          </button>
+        </div>
+      </section>
+
+      <!-- brute force -->
+      <section class="brute-force-section hidden">
+        <div class="section-title">Brute force</div>
+        <div class="brute-force-content">
+          <!-- input encrypted text -->
+        <div class="brute-force-input brute-force-content-component">
+          <div class="component-title">Encrypted text</div>
+          <textarea name="brute-force-textArea" id="brute-force-input-textArea" cols="30" rows="10" placeholder="Input encrypted text"></textarea>
+        </div>
+        <!-- btn for brute force -->
+        <div class="brute-force-btns brute-force-content-component">
+          <button class="button" id="bruteForce">Try decryption</button>
+          <button class="button" id="bruteForceBackToMenu">Back to menu</button>
+        </div>
+        <!-- brute force result -->
+        <div class="brute-force-output brute-force-content-component">
+          <div class="component-title">Result of brute force</div>
+          <textarea name="brute-force-textArea" id="brute-force-output-textArea" cols="30" rows="10" spellcheck="true"></textarea>
+        </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>

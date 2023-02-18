@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+/* html {
+  max-height: 300vh;
+  overflow: hidden;
+} */
+
+::-webkit-scrollbar {
+  visibility: hidden;
+}
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+  font-family: "Ubuntu", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* MODEFICATOR CLASSES  */
+.hidden {
+  display: none;
+}
+.blur {
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------- */
+
+/* intro section */
+.intro-block {
+  height: 100vh;
+}
+.title {
+  font-size: 120px;
+  text-align: center;
+  padding-top: 14%;
+}
+.start-btn {
+  margin-left: 45%;
+  display: inline-block;
+  font-size: 35px;
+  margin-top: 2.5%;
+  transition: all 0.2s;
+}
+.start-btn:hover {
+  cursor: pointer;
+  position: relative;
+  content: "Let's start ↓";
+  font-size: 38px;
+}
+
+.circle1,
+.circle2 {
+  position: absolute;
+  display: block;
+  background: palevioletred;
+  border-radius: 50%;
+
+  width: 3000px;
+  height: 3000px;
+  z-index: -1;
+}
+.circle1 {
+  transform: translateX(-50%);
+  top: -15%;
+}
+.circle2 {
+  transform: translateX(10%);
+  top: 400%;
+}
+
+/* menu section */
+.menu-block {
+  height: 100vh;
+}
+.section-title {
+  font-size: 100px;
+  text-align: center;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 4.5% 5% 0;
+}
+.menu-card {
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.4%;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  min-width: 20vw;
+}
+
+.menu-card__title {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 40%;
+  transition: all 0.3s;
+}
+.menu-card__buttons {
+  display: grid;
+
+  grid-template-columns: repeat(1, auto);
+  margin-top: 10%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.menu-card:hover .menu-card__buttons {
+  opacity: 1;
+  /* transform: translateY(0); */
+}
+.menu-card:hover .menu-card__title {
+  margin-top: 5%;
+}
+.button {
+  font-size: 20px;
+  margin-top: 5%;
+  padding: 2%;
+  border-radius: 10px;
+}
+.button:hover {
+  cursor: pointer;
+}
+/* ---------------------------------------------------------- */
+/* test encryption */
+.test-encryption-block,
+.test-decryption-block {
+  height: 100vh;
+}
+.test-encryption__content {
+  margin: 0 auto;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  /* margin: 4% 15% 0; */
+}
+.test-encryption__card {
+  min-width: 30vw;
+  display: flex;
+  margin-top: 5%;
+  padding: 5% 0;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.test-encrypt__card-title {
+  font-size: 30px;
+  margin-bottom: 4%;
+  text-align: center;
+}
+
+.input-text {
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 3%;
+  font-size: 20px;
+  background: transparent;
+}
+.input-text::placeholder {
+  color: black;
+}
+.test-encryption__buttons {
+  padding: 4% 0;
+}
+.input-key {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}
+.input-key input {
+  font-size: 20px;
+  padding: 2.5%;
+  max-width: 5vw;
+  display: block;
+  margin-left: 10%;
+}
+.key-label {
+  font-size: 30px;
+}
+.test-encryption__buttons .button {
+  width: 45%;
+}
+.test-encryption__text-result {
+  font-size: 20px;
+  width: 90%;
+  height: 90%;
+  overflow-y: scroll;
+  user-select: all;
+}
+/* ----------------------------------------- */
+/* encrypt files */
+.files {
+  height: 100vh;
+  position: relative;
+}
+.files .files-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+}
+.files .files-content .files-card {
+  max-width: 28vw;
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.2%;
+  overflow: hidden;
+}
+.card-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 2%;
+  padding-top: 20%;
+  transition: all 0.4s;
+}
+.files .files-content .files-card:hover .card-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 2%;
+  padding-top: 0;
+}
+.files .files-content .files-card .card-description {
+  margin-top: 15%;
+  opacity: 0;
+  transition: all 0.4s;
+  transform: translateY(-300%);
+}
+.files .files-content .files-card:hover .card-description {
+  /* margin-top: 5%; */
+  opacity: 1;
+  transform: translateY(0);
+}
+.files .files-content .files-card .card-description .card-text {
+  text-align: justify;
+  font-size: 18px;
+}
+.files .files-content .files-card .card-description .card-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 5% auto 0;
+}
+
+.input-file-group .open-file-btn {
+  display: none;
+}
+
+.input-file-group label {
+  font-size: 20px;
+  display: block;
+  background: white;
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 5.5% 0;
+  width: 8vw;
+  text-align: center;
+  margin-top: 9.5%;
+  border-radius: 10px;
+}
+
+.input-file-group label:hover {
+  cursor: pointer;
+}
+.files .files-content .files-card .card-description .card-buttons .button {
+  background: white;
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.open-file-description {
+  padding-top: 13%;
+}
+
+.back-to-menu-container {
+  margin-top: -8%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.back-to-menu-container .back-to-menu-btn {
+  padding: 1.2%;
+  background: white;
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* create file pop up */
+.create-file-pop-up {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+  background: white;
+  padding: 1.2%;
+  z-index: 2;
+  transition: all 0.6s;
+  width: 35vw;
+  /* backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+}
+.create-file-pop-up .card-title {
+  margin-top: -10%;
+}
+.file-name-group {
+  margin: 3% 0;
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+}
+.file-name-group label,
+.file-name-group input {
+  font-size: 20px;
+}
+.file-name-group input {
+  border-bottom: 1.6px solid rgb(197, 194, 194);
+  transition: all 0.5s;
+}
+.file-name-group input:focus {
+  border-bottom: 1.6px solid black;
+}
+.file-type-group div {
+  font-size: 20px;
+}
+.choose-options .radio-group label {
+  font-size: 20px;
+}
+.file-text-group textarea {
+  border: 1px solid rgb(197, 194, 194);
+  width: 100%;
+  padding: 1.2%;
+  margin-top: 5%;
+  font-size: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.file-text-group textarea:focus {
+  border: 1px solid black;
+}
+.create-file-btn-group {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+}
+.create-file-btn-group button {
+  min-width: 12vw;
+}
+
+/* pop up for printing file */
+.create-file-pop-up .file-inner {
+  width: 90%;
+  font-size: 20px;
+  margin: 3% auto;
+  padding: 1.2%;
+}
+
+/* pop up for editing file */
+.edit-file-header {
+  text-align: right;
+  color: #ccc;
+  transition: all 0.2s;
+  font-size: 25px;
+}
+.edit-file-header:hover {
+  color: #000;
+  cursor: pointer;
+}
+.edit-file-popup .edit-file-content {
+  width: 105%;
+}
+.edit-file-popup .edit-file-content textarea {
+  width: 93%;
+  font-size: 20px;
+  padding: 1.2%;
+  border: 1px solid #ccc;
+  margin: 1.2% auto 0;
+  transition: all 0.2s;
+}
+.edit-file-popup .edit-file-content textarea:focus {
+  border: 1px solid #000;
+}
+
+/* edit file key setting pop up */
+.key-setting {
+  margin-top: 5%;
+  backdrop-filter: blur(2.4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.edit-file-set-key {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin: 5% auto;
+}
+.edit-file-set-key label {
+  font-size: 20px;
+}
+.edit-file-set-key input {
+  border: 1px solid #ccc;
+  font-size: 20px;
+  width: 50%;
+}
+
+/* print file */
+
+.show-printed-file .file-inner {
+  max-height: 400px;
+  max-width: 600px;
+  /* display: flex; */
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+/* DECRYPTION FILES */
+.decrypt-files {
+  position: relative;
+}
+
+.decrypt-edited-file {
+  position: absolute;
+}
+// create file pop up
+
+//brute-force-section
+.brute-force-section {
+  height: 100vh;
+}
+.brute-force-section .brute-force-content {
+  display: flex;
+  width: 90vw;
+  margin: 5% auto;
+}
+.brute-force-section .brute-force-content .brute-force-content-component {
+  min-width: 27vw;
+  width: 100%;
+}
+.brute-force-section
+  .brute-force-content
+  .brute-force-content-component
+  textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  transition: all 0.2s;
+  font-size: 18px;
+}
+.brute-force-section
+  .brute-force-content
+  .brute-force-content-component
+  .component-title {
+  font-size: 30px;
+  padding-bottom: 1.2%;
+}
+.brute-force-section
+  .brute-force-content
+  .brute-force-content-component
+  textarea:focus {
+  border-color: #000;
+}
+.brute-force-section .brute-force-content .brute-force-btns {
+  display: grid;
+  margin: 4.5% auto;
+  grid-template-columns: repeat(1, auto);
+  padding-left: 12%;
+}
+.brute-force-section .brute-force-content .brute-force-btns button {
+  width: 60%;
+}
